@@ -9,10 +9,30 @@
       background: #f2f2f2;
       color: #222;
       margin: 40px;
+      line-height: 1.6;
     }
     h1, h2 {
       text-align: center;
       margin-top: 40px;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .btn {
+      display: inline-block;
+      background: #0066cc;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #004b99;
     }
     .gallery {
       display: grid;
@@ -37,73 +57,94 @@
       margin-top: 60px;
       color: #555;
     }
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 <body>
   <h1>Raytracer Project 3A – Render Gallery</h1>
   <p style="text-align:center;">By Samra Huseynova | CSCI 5607 – Fall 2025</p>
 
-  <h2> Lighting Effects</h2>
-  <div class="gallery">
-    <div class="item">
-      <h3>Ambient Light</h3>
-      <img src="spheres_ambient.png" alt="Ambient Lighting">
-    </div>
-    <div class="item">
-      <h3>Point Light</h3>
-      <img src="spheres_point.png" alt="Point Lighting">
-    </div>
-    <div class="item">
-      <h3>Shadows</h3>
-      <img src="spheres_shadows.png" alt="Shadows">
-    </div>
-    <div class="item">
-      <h3>Multiple Light Sources</h3>
-      <img src="spheres_multi.png" alt="Multiple Lights">
-    </div>
-    <div class="item">
-      <h3>Directional Light</h3>
-      <img src="spheres_directional.png" alt="Directional Light">
-    </div>
-    <div class="item">
-      <h3>Spot Light</h3>
-      <img src="spheres_spot.png" alt="Spot Light">
-    </div>
+  <p style="text-align:center; font-size: 1.1em;">
+    🔗 View full project on GitHub: 
+    <a href="https://github.com/sh1303/raytracer" target="_blank">https://github.com/sh1303/raytracer</a>
+  </p>
+
+  <p style="text-align:center; margin-top: 10px;">
+    📁 <a class="btn" href="https://drive.google.com/file/d/1NHfzP8qqYUoJ5Yi7CRR13vB6c_5g-H2h/view?usp=sharing" target="_blank">
+      Download Project Files (Google Drive)
+    </a>
+  </p>
+
+  <div class="section">
+    <h2> Project Overview</h2>
+    <p>
+      This project implements a ray tracer from scratch in C++ as part of the <strong>CSCI 5607 – Computer Graphics</strong> course. 
+      The goal was to build a fully functional ray tracing engine capable of simulating realistic lighting and material effects, 
+      including ambient, point, directional, and spot lighting, along with shadows, reflection, and refraction. 
+      The scenes are rendered using physically inspired parameters and exported as images to visualize the results.
+    </p>
+    <p>
+      Each test scene demonstrates a specific feature of the lighting or material models implemented. 
+      The results below include multiple lighting setups, material variations, and optical effects that 
+      show how rays interact with objects in the scene.
+    </p>
   </div>
 
-  <h2>Material & Phong Shading</h2>
-  <div class="gallery">
-    <div class="item">
-      <h3>Base Color & Specularity</h3>
-      <img src="spheres_color_specular.png" alt="Color and Specularity">
-    </div>
-    <div class="item">
-      <h3>Material Variation</h3>
-      <img src="spheres_materials.png" alt="Material Variety">
-    </div>
-    <div class="item">
-      <h3>Material Depth (0)</h3>
-      <img src="spheres_materials_depth_0.png" alt="Material Depth 0">
-    </div>
-    <div class="item">
-      <h3>Material Depth (1)</h3>
-      <img src="spheres_materials_depth_1.png" alt="Material Depth 1">
-    </div>
+  <div class="section">
+    <h2>Difficulties Encountered</h2>
+    <p>
+      One of the main challenges I faced was debugging the geometry calculations—especially ensuring that ray-sphere intersections
+      were numerically stable and that reflected and refracted rays behaved correctly when bouncing off surfaces. 
+      Getting the camera’s aspect ratio right took several attempts because small mistakes in the projection math caused the spheres to appear stretched or flattened.  
+    </p>
+    <p>
+      Another difficulty was handling the recursive nature of ray tracing. 
+      When I first added reflection and refraction, the image would either render completely black or blow out with overexposure due to uncontrolled recursion depth. 
+      Carefully limiting <code>max_depth</code> and balancing reflection coefficients finally produced smooth and realistic results.
+    </p>
+    <p>
+      I also struggled with balancing light intensity—spotlights were initially too bright and made scenes unrealistic.
+      I tuned the falloff angles and experimented with both linear and cosine falloff functions until the lighting transitions looked natural.
+      This process taught me how small parameter changes can drastically affect realism in rendered images.
+    </p>
+    <p>
+      Overall, this project helped me understand how low-level rendering pipelines work, 
+      and it gave me a deep appreciation for how much computation and fine-tuning go into producing a single realistic image.
+    </p>
   </div>
 
-  <h2> Reflection & Refraction</h2>
+  <h2>Lighting Effects</h2>
   <div class="gallery">
-    <div class="item">
-      <h3>Reflections</h3>
-      <img src="spheres_reflection.png" alt="Reflection">
-    </div>
-    <div class="item">
-      <h3>Refraction</h3>
-      <img src="spheres_refraction.png" alt="Refraction">
-    </div>
+    <div class="item"><h3>Ambient Light</h3><img src="spheres_ambient.png" alt="Ambient Lighting"></div>
+    <div class="item"><h3>Point Light</h3><img src="spheres_point.png" alt="Point Lighting"></div>
+    <div class="item"><h3>Shadows</h3><img src="spheres_shadows.png" alt="Shadows"></div>
+    <div class="item"><h3>Multiple Light Sources</h3><img src="spheres_multi.png" alt="Multiple Lights"></div>
+    <div class="item"><h3>Directional Light</h3><img src="spheres_directional.png" alt="Directional Light"></div>
+    <div class="item"><h3>Spot Light</h3><img src="spheres_spot.png" alt="Spot Light"></div>
+    <div class="item"><h3>Spot Light 2</h3><img src="raytraced.png" alt="Spot Light"></div>
   </div>
 
-  <h2>🧩 Multi-Sphere Test Scenes</h2>
+  <h2> Material & Phong Shading</h2>
+  <div class="gallery">
+    <div class="item"><h3>Base Color & Specularity</h3><img src="spheres_color_specular.png" alt="Color and Specularity"></div>
+    <div class="item"><h3>Material Variation</h3><img src="spheres_materials.png" alt="Material Variety"></div>
+    <div class="item"><h3>Material Depth (0)</h3><img src="spheres_materials_depth_0.png" alt="Material Depth 0"></div>
+    <div class="item"><h3>Material Depth (1)</h3><img src="spheres_materials_depth_1.png" alt="Material Depth 1"></div>
+  </div>
+
+  <h2>Reflection</h2>
+  <div class="gallery">
+    <div class="item"><h3>Reflections</h3><img src="spheres_reflection.png" alt="Reflection"></div>
+  </div>
+
+  <h2>Multi-Sphere Test Scenes and Camera Positions</h2>
   <div class="gallery">
     <div class="item"><img src="spheres1.png" alt="Scene 1"></div>
     <div class="item"><img src="spheres2.png" alt="Scene 2"></div>
