@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSCI 5607 – Raytracer Project 3A</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      color: #222;
+      margin: 40px;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      margin: 30px auto;
+      max-width: 1200px;
+    }
+    .item {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+    .item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Raytracer Project 3A – Render Gallery</h1>
+  <p style="text-align:center;">By Samra Huseynova | CSCI 5607 – Fall 2025</p>
+
+  <h2> Lighting Effects</h2>
+  <div class="gallery">
+    <div class="item">
+      <h3>Ambient Light</h3>
+      <img src="spheres_ambient.png" alt="Ambient Lighting">
+    </div>
+    <div class="item">
+      <h3>Point Light</h3>
+      <img src="spheres_point.png" alt="Point Lighting">
+    </div>
+    <div class="item">
+      <h3>Shadows</h3>
+      <img src="spheres_shadows.png" alt="Shadows">
+    </div>
+    <div class="item">
+      <h3>Multiple Light Sources</h3>
+      <img src="spheres_multi.png" alt="Multiple Lights">
+    </div>
+    <div class="item">
+      <h3>Directional Light</h3>
+      <img src="spheres_directional.png" alt="Directional Light">
+    </div>
+    <div class="item">
+      <h3>Spot Light</h3>
+      <img src="spheres_spot.png" alt="Spot Light">
+    </div>
+  </div>
+
+  <h2>Material & Phong Shading</h2>
+  <div class="gallery">
+    <div class="item">
+      <h3>Base Color & Specularity</h3>
+      <img src="spheres_color_specular.png" alt="Color and Specularity">
+    </div>
+    <div class="item">
+      <h3>Material Variation</h3>
+      <img src="spheres_materials.png" alt="Material Variety">
+    </div>
+    <div class="item">
+      <h3>Material Depth (0)</h3>
+      <img src="spheres_materials_depth_0.png" alt="Material Depth 0">
+    </div>
+    <div class="item">
+      <h3>Material Depth (1)</h3>
+      <img src="spheres_materials_depth_1.png" alt="Material Depth 1">
+    </div>
+  </div>
+
+  <h2> Reflection & Refraction</h2>
+  <div class="gallery">
+    <div class="item">
+      <h3>Reflections</h3>
+      <img src="spheres_reflection.png" alt="Reflection">
+    </div>
+    <div class="item">
+      <h3>Refraction</h3>
+      <img src="spheres_refraction.png" alt="Refraction">
+    </div>
+  </div>
+
+  <h2>🧩 Multi-Sphere Test Scenes</h2>
+  <div class="gallery">
+    <div class="item"><img src="spheres1.png" alt="Scene 1"></div>
+    <div class="item"><img src="spheres2.png" alt="Scene 2"></div>
+    <div class="item"><img src="spheres3.png" alt="Scene 3"></div>
+    <div class="item"><img src="spheres4.png" alt="Scene 4"></div>
+    <div class="item"><img src="spheres5.png" alt="Scene 5"></div>
+    <div class="item"><img src="spheres6.png" alt="Scene 6"></div>
+  </div>
+
+  <h2> Multi-Light Composite Scenes</h2>
+  <div class="gallery">
+    <div class="item"><img src="multispheres2.png" alt="Multispheres 2"></div>
+    <div class="item"><img src="multispheres3.png" alt="Multispheres 3"></div>
+    <div class="item"><img src="multispheres4.png" alt="Multispheres 4"></div>
+    <div class="item"><img src="multispheres_ambient.png" alt="Multispheres Ambient"></div>
+    <div class="item"><img src="multispheres_point.png" alt="Multispheres Point"></div>
+    <div class="item"><img src="multispheres_shadows.png" alt="Multispheres Shadows"></div>
+    <div class="item"><img src="multispheres_multi.png" alt="Multispheres Multi"></div>
+    <div class="item"><img src="multispheres_directional.png" alt="Multispheres Directional"></div>
+    <div class="item"><img src="multispheres_spot.png" alt="Multispheres Spot"></div>
+  </div>
+
+  <footer>
+    <p>© 2025 Samra Huseynova | University of Minnesota – College of Science & Engineering</p>
+  </footer>
+</body>
+</html>
